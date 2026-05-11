@@ -415,11 +415,274 @@
       .grid3 .field:last-child { grid-column: 1 / -1; }
       .app-name { font-size: 18px; }
     }
+
+    /* ── History Page ── */
+    #page-history {
+      display: none;
+    }
+
+    .history-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .history-title {
+      font-family: 'Cinzel', serif;
+      font-size: 13px;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+    }
+
+    .history-count {
+      font-size: 11px;
+      color: var(--text-muted);
+      background: var(--gold-bg);
+      border: 1px solid var(--gold-border);
+      border-radius: 20px;
+      padding: 2px 10px;
+    }
+
+    .clear-all-btn {
+      background: var(--red-bg);
+      border: 1px solid var(--red-border);
+      color: var(--red);
+      border-radius: var(--radius-sm);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 5px 12px;
+      cursor: pointer;
+      letter-spacing: 0.04em;
+    }
+
+    .history-empty {
+      text-align: center;
+      padding: 4rem 2rem;
+      color: var(--text-muted);
+    }
+
+    .history-empty .empty-icon {
+      font-size: 48px;
+      margin-bottom: 1rem;
+      opacity: 0.4;
+    }
+
+    .history-empty p {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .history-empty .empty-hint {
+      font-size: 12px;
+      color: var(--text-dim);
+      margin-top: 8px;
+    }
+
+    .history-item {
+      background: var(--surface);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius);
+      margin: 0 1rem 10px;
+      overflow: hidden;
+      position: relative;
+      animation: fadeIn 0.25s ease;
+    }
+
+    .history-item::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .history-item-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+      background: var(--surface2);
+      border-bottom: 1px solid rgba(201,168,76,0.08);
+    }
+
+    .history-item-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .badge-type {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.08em;
+    }
+
+    .badge-buy {
+      background: var(--green-bg);
+      border: 1px solid var(--green-border);
+      color: var(--green);
+    }
+
+    .badge-sell {
+      background: var(--red-bg);
+      border: 1px solid var(--red-border);
+      color: var(--red);
+    }
+
+    .history-instr {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .history-time {
+      font-size: 10px;
+      color: var(--text-dim);
+    }
+
+    .history-delete-btn {
+      background: none;
+      border: none;
+      color: var(--text-dim);
+      cursor: pointer;
+      font-size: 16px;
+      padding: 2px 4px;
+      border-radius: 4px;
+      transition: color 0.15s;
+      line-height: 1;
+    }
+
+    .history-delete-btn:hover { color: var(--red); }
+
+    .history-item-body {
+      padding: 12px 14px;
+    }
+
+    .history-pnl-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .history-pnl-box {
+      background: var(--surface2);
+      border-radius: var(--radius-sm);
+      padding: 8px 10px;
+    }
+
+    .history-pnl-box.profit-box {
+      background: var(--green-bg);
+      border: 1px solid var(--green-border);
+    }
+
+    .history-pnl-box.loss-box {
+      background: var(--red-bg);
+      border: 1px solid var(--red-border);
+    }
+
+    .history-pnl-box.actual-box {
+      border: 1px solid var(--gold-border);
+      background: var(--gold-bg);
+    }
+
+    .history-pnl-label {
+      font-size: 9px;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+    }
+
+    .history-pnl-val {
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .history-pnl-sub {
+      font-size: 11px;
+      font-weight: 500;
+    }
+
+    .history-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 4px;
+    }
+
+    .history-detail-item {
+      font-size: 11px;
+    }
+
+    .history-detail-item .dk {
+      display: block;
+      font-size: 9px;
+      margin-bottom: 1px;
+    }
+
+    .history-detail-item .dv {
+      font-size: 11px;
+    }
+
+    .history-rr {
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px solid rgba(201,168,76,0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+    }
+
+    .history-rr .rr-val {
+      font-size: 13px;
+    }
+
+    .history-actual-full {
+      margin-top: 8px;
+      padding: 8px 10px;
+      background: var(--gold-bg);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius-sm);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+    }
+
+    .save-notif {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-60px);
+      background: var(--surface);
+      border: 1px solid var(--gold);
+      border-radius: var(--radius-sm);
+      padding: 10px 18px;
+      font-size: 13px;
+      color: var(--gold);
+      z-index: 999;
+      transition: transform 0.3s ease;
+      white-space: nowrap;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+
+    .save-notif.show {
+      transform: translateX(-50%) translateY(0);
+    }
   </style>
 </head>
 <body>
 
 <div class="app-wrap">
+
+<div id="page-calc">
 
   <!-- Header -->
   <header class="app-header">
@@ -509,21 +772,21 @@
     <div class="grid3" style="margin-bottom:12px;">
       <div class="field">
         <label>Entry Price</label>
-        <input type="number" id="entry" placeholder="0.00" step="0.01" value="4700" inputmode="decimal"/>
+        <input type="number" id="entry" placeholder="0" step="0" value=" " inputmode="decimal"/>
       </div>
       <div class="field">
         <label>Take Profit (TP)</label>
-        <input type="number" id="tp" placeholder="0.00" step="0.01" value="4719.78" inputmode="decimal"/>
+        <input type="number" id="tp" placeholder="0" step="0" value=" " inputmode="decimal"/>
       </div>
       <div class="field">
         <label>Stop Loss (SL)</label>
-        <input type="number" id="sl" placeholder="0.00" step="0.01" value="4650" inputmode="decimal"/>
+        <input type="number" id="sl" placeholder="0" step="0" value=" " inputmode="decimal"/>
       </div>
     </div>
     <div class="grid2" style="margin-bottom:12px;">
       <div class="field">
         <label>Jumlah Lot</label>
-        <input type="number" id="lots" placeholder="1" step="0.01" value="1" min="0.01" inputmode="decimal"/>
+        <input type="number" id="lots" placeholder="0.01" step="0.01" value=" " min="0.01" inputmode="decimal"/>
       </div>
       <div class="field">
         <label>Exit Aktual (opsional)</label>
@@ -570,13 +833,30 @@
 
 </div>
 
+</div><!-- /page-calc -->
+
+<!-- History Page -->
+<div id="page-history">
+  <div class="app-header" style="padding-bottom:0.5rem;">
+    <div class="section-label" style="justify-content:center; font-size:13px; color:var(--gold); letter-spacing:0.1em;">📋 RIWAYAT KALKULASI / NASRULLAH</div>
+  </div>
+  <div class="history-header">
+    <span class="history-count" id="history-count">0 data</span>
+    <button class="clear-all-btn" onclick="clearAllHistory()">🗑 Hapus Semua</button>
+  </div>
+  <div id="history-list"></div>
+</div>
+
+<!-- Save Notification -->
+<div class="save-notif" id="save-notif">✅ Tersimpan ke Riwayat</div>
+
 <!-- Bottom Nav -->
 <nav class="bottom-bar">
-  <div class="nav-item active">
+  <div class="nav-item active" id="nav-calc" onclick="showPage('calc')">
     <span class="nav-icon">⚡</span>
     <span>Kalkulator</span>
   </div>
-  <div class="nav-item" onclick="alert('Fitur riwayat akan segera hadir!')">
+  <div class="nav-item" id="nav-history" onclick="showPage('history')">
     <span class="nav-icon">📋</span>
     <span>Riwayat</span>
   </div>
@@ -608,6 +888,27 @@
     navigator.serviceWorker.register('./sw.js').catch(() => {});
   }
 
+  // ── Page Navigation ──
+  function showPage(page) {
+    const calcPage = document.getElementById('page-calc');
+    const histPage = document.getElementById('page-history');
+    const navCalc = document.getElementById('nav-calc');
+    const navHist = document.getElementById('nav-history');
+
+    if (page === 'calc') {
+      calcPage.style.display = 'block';
+      histPage.style.display = 'none';
+      navCalc.classList.add('active');
+      navHist.classList.remove('active');
+    } else {
+      calcPage.style.display = 'none';
+      histPage.style.display = 'block';
+      navCalc.classList.remove('active');
+      navHist.classList.add('active');
+      renderHistory();
+    }
+  }
+
   // ── Logic ──
   let posType = 'buy';
 
@@ -633,6 +934,125 @@
     return Math.abs(n).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
   }
 
+  function showNotif() {
+    const el = document.getElementById('save-notif');
+    el.classList.add('show');
+    setTimeout(() => el.classList.remove('show'), 2200);
+  }
+
+  // ── History Storage ──
+  const HISTORY_KEY = 'ixc_history';
+
+  function loadHistory() {
+    try {
+      return JSON.parse(localStorage.getItem(HISTORY_KEY)) || [];
+    } catch { return []; }
+  }
+
+  function saveHistory(list) {
+    localStorage.setItem(HISTORY_KEY, JSON.stringify(list));
+  }
+
+  function addHistory(entry) {
+    const list = loadHistory();
+    list.unshift(entry); // newest first
+    if (list.length > 100) list.pop(); // max 100 entries
+    saveHistory(list);
+  }
+
+  function deleteHistory(id) {
+    const list = loadHistory().filter(h => h.id !== id);
+    saveHistory(list);
+    renderHistory();
+  }
+
+  function clearAllHistory() {
+    if (loadHistory().length === 0) return;
+    if (!confirm('Hapus semua riwayat kalkulasi?')) return;
+    localStorage.removeItem(HISTORY_KEY);
+    renderHistory();
+  }
+
+  function formatTime(ts) {
+    const d = new Date(ts);
+    const pad = n => String(n).padStart(2, '0');
+    return `${pad(d.getDate())}/${pad(d.getMonth()+1)}/${d.getFullYear()} ${pad(d.getHours())}:${pad(d.getMinutes())}`;
+  }
+
+  function renderHistory() {
+    const list = loadHistory();
+    const container = document.getElementById('history-list');
+    const countEl = document.getElementById('history-count');
+    countEl.textContent = list.length + ' data';
+
+    if (list.length === 0) {
+      container.innerHTML = `
+        <div class="history-empty">
+          <div class="empty-icon">📋</div>
+          <p>Belum ada riwayat kalkulasi</p>
+          <p class="empty-hint">Hitung P&L di halaman Kalkulator,<br>riwayat akan otomatis tersimpan di sini.</p>
+        </div>`;
+      return;
+    }
+
+    container.innerHTML = list.map(h => {
+      const tpBlock = h.tpRes ? `
+        <div class="history-pnl-box profit-box">
+          <div class="history-pnl-label">✅ Profit (TP)</div>
+          <div class="history-pnl-val profit">${h.tpRes.pips >= 0 ? '+' : ''}${h.tpRes.pips.toFixed(1)} pips</div>
+          <div class="history-pnl-sub profit">${h.tpRes.usd >= 0 ? '+' : ''}$${fmt(h.tpRes.usd)}</div>
+        </div>` : '<div class="history-pnl-box"><div class="history-pnl-label">TP</div><div class="history-pnl-val">—</div></div>';
+
+      const slBlock = h.slRes ? `
+        <div class="history-pnl-box loss-box">
+          <div class="history-pnl-label">❌ Loss (SL)</div>
+          <div class="history-pnl-val loss">${h.slRes.pips.toFixed(1)} pips</div>
+          <div class="history-pnl-sub loss">-$${fmt(Math.abs(h.slRes.usd))}</div>
+        </div>` : '<div class="history-pnl-box"><div class="history-pnl-label">SL</div><div class="history-pnl-val">—</div></div>';
+
+      const actualBlock = h.actualRes ? `
+        <div class="history-actual-full">
+          <span class="dk">📌 Aktual</span>
+          <span style="font-weight:700; color:${h.actualRes.pips >= 0 ? 'var(--green)' : 'var(--red)'}">
+            ${h.actualRes.pips >= 0 ? '+' : ''}${h.actualRes.pips.toFixed(1)} pips &nbsp;
+            ${h.actualRes.pips >= 0 ? '+' : '-'}$${fmt(Math.abs(h.actualRes.usd))}
+            ${h.actualRes.pips >= 0 ? '✅' : '❌'}
+          </span>
+        </div>` : '';
+
+      const rrBlock = h.rr ? `
+        <div class="history-rr">
+          <span class="dk">Risk / Reward Ratio</span>
+          <span class="rr-val">${h.rr}</span>
+        </div>` : '';
+
+      return `
+        <div class="history-item" id="hi-${h.id}">
+          <div class="history-item-header">
+            <div class="history-item-meta">
+              <span class="badge-type ${h.posType === 'buy' ? 'badge-buy' : 'badge-sell'}">${h.posType.toUpperCase()}</span>
+              <span class="history-instr">${h.instrName}</span>
+              <span class="history-time">${formatTime(h.ts)}</span>
+            </div>
+            <button class="history-delete-btn" onclick="deleteHistory('${h.id}')" title="Hapus">×</button>
+          </div>
+          <div class="history-item-body">
+            <div class="history-pnl-row">
+              ${tpBlock}
+              ${slBlock}
+            </div>
+            <div class="history-details">
+              <div class="history-detail-item"><span class="dk">Entry</span><span class="dv">${fmt(h.entry)}</span></div>
+              <div class="history-detail-item"><span class="dk">Lot</span><span class="dv">${h.lots} × ${h.lotText}</span></div>
+              <div class="history-detail-item"><span class="dk">Pip Val</span><span class="dv">${h.pipVal}</span></div>
+            </div>
+            ${actualBlock}
+            ${rrBlock}
+          </div>
+        </div>`;
+    }).join('');
+  }
+
   function calculate() {
     const instr = document.getElementById('instrument').value;
     const lots = parseFloat(document.getElementById('lots').value) || 1;
@@ -651,8 +1071,8 @@
     void sec.querySelector('.card').offsetWidth;
     sec.querySelector('.card').classList.add('fade-in');
 
-    const tpRes = !isNaN(tp) ? calcPnl(entry, tp, posType, pipVal, lots, lotMult) : null;
-    const slRes = !isNaN(sl) ? calcPnl(entry, sl, posType, pipVal, lots, lotMult) : null;
+    const tpRes = (tp && !isNaN(tp) && tp > 0) ? calcPnl(entry, tp, posType, pipVal, lots, lotMult) : null;
+    const slRes = (sl && !isNaN(sl) && sl > 0) ? calcPnl(entry, sl, posType, pipVal, lots, lotMult) : null;
 
     if (tpRes) {
       document.getElementById('res-profit-pips').textContent = (tpRes.pips >= 0 ? '+' : '') + tpRes.pips.toFixed(1) + ' pips';
@@ -676,45 +1096,60 @@
       ['Jumlah Lot', lots],
       ['Entry Price', fmt(entry)],
     ];
-    if (!isNaN(tp)) rows.push(['Take Profit', fmt(tp)]);
-    if (!isNaN(sl)) rows.push(['Stop Loss', fmt(sl)]);
+    if (tpRes) rows.push(['Take Profit', fmt(tp)]);
+    if (slRes) rows.push(['Stop Loss', fmt(sl)]);
     rows.push(['Pip Value', pipVal]);
 
     document.getElementById('detail-rows').innerHTML = rows.map(([k, v]) =>
       `<div class="detail-row"><span class="dk">${k}</span><span class="dv">${v}</span></div>`
     ).join('');
 
+    let rrText = '—';
     if (tpRes && slRes && slRes.pips !== 0) {
-      document.getElementById('res-rr').textContent = '1 : ' + Math.abs(tpRes.pips / slRes.pips).toFixed(2);
-    } else {
-      document.getElementById('res-rr').textContent = '—';
+      rrText = '1 : ' + Math.abs(tpRes.pips / slRes.pips).toFixed(2);
     }
+    document.getElementById('res-rr').textContent = rrText;
 
+    let actualRes = null;
     const actualDiv = document.getElementById('actual-result');
     if (exitVal && !isNaN(parseFloat(exitVal))) {
-      const r = calcPnl(entry, parseFloat(exitVal), posType, pipVal, lots, lotMult);
+      actualRes = calcPnl(entry, parseFloat(exitVal), posType, pipVal, lots, lotMult);
       actualDiv.style.display = 'block';
-      const isP = r.pips >= 0;
+      const isP = actualRes.pips >= 0;
       const pe = document.getElementById('res-actual-pips');
       const ue = document.getElementById('res-actual-usd');
       pe.className = 'mvalue ' + (isP ? 'profit' : 'loss');
-      pe.textContent = (isP ? '+' : '') + r.pips.toFixed(1) + ' pips';
+      pe.textContent = (isP ? '+' : '') + actualRes.pips.toFixed(1) + ' pips';
       ue.className = 'msub ' + (isP ? 'profit' : 'loss');
-      ue.textContent = (isP ? '+' : '-') + '$' + fmt(Math.abs(r.usd)) + ' — ' + (isP ? 'PROFIT ✅' : 'LOSS ❌');
+      ue.textContent = (isP ? '+' : '-') + '$' + fmt(Math.abs(actualRes.usd)) + ' — ' + (isP ? 'PROFIT ✅' : 'LOSS ❌');
     } else {
       actualDiv.style.display = 'none';
     }
+
+    // ── Save to History ──
+    const record = {
+      id: Date.now().toString(36) + Math.random().toString(36).slice(2, 5),
+      ts: Date.now(),
+      instrName,
+      posType,
+      lotText,
+      lots,
+      entry,
+      tp: tp || null,
+      sl: sl || null,
+      pipVal,
+      tpRes,
+      slRes,
+      actualRes,
+      rr: rrText !== '—' ? rrText : null
+    };
+    addHistory(record);
+    showNotif();
 
     setTimeout(() => sec.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
   }
 
   calculate();
-
-  // ── Service Worker ──
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('./sw.js').catch(() => {});
-  }
-
 </script>
 </body>
 </html>
